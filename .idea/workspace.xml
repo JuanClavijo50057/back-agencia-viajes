@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6bff5f2a-6bc2-4d77-b7dc-313d030f164f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/Backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/copilot.data.migration.agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/copilot.data.migration.edit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-notifications/notifications.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/.mvn/wrapper/maven-wrapper.properties.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Configurations/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/PermissionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/PhotosController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/ProfilesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/RolePermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/RolesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/SecurityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/SessionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/UserRoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Controllers/UsersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Interceptors/SecurityInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/Photo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/Profile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/RolePermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Models/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/MsSecurityApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/PermissionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/PhotoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/ProfileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/RolePermissionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/SessionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Repositories/UserRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Services/EncryptionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Services/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Services/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/java/com/app/ms_security/Services/ValidatorsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-agencia-viajes/ms-security/src/test/java/com/app/ms_security/MsSecurityApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-agencia-viajes/ms-notifications/1_test_texto_plano.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-agencia-viajes/ms-notifications/2_test_html.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-agencia-viajes/ms-notifications/3_test_lista_destinatarios.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/back-agencia-viajes/ms-notifications" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="33GYetZ0GGENBLwiTRKNLHkQINm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Backend" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bff5f2a-6bc2-4d77-b7dc-313d030f164f" name="Changes" comment="" />
+      <created>1758944979345</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758944979345</updated>
+    </task>
+    <servers />
+  </component>
+</project>
