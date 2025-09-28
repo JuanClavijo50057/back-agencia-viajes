@@ -69,8 +69,8 @@ public class UserRoleController {
     }
 
     @GetMapping("user/{userId}")
-    public List<UserRole> getRolesByUser(@PathVariable String userId) {
-        return this.theUserRoleRepository.getRolesByUser(userId);
+    public List<Role> getRolesByUser(@PathVariable String userId) {
+        return this.theUserRoleRepository.getRolesByUser(userId).stream().map(UserRole::getRole).toList();
     }
 
     @GetMapping("role/{roleId}")
