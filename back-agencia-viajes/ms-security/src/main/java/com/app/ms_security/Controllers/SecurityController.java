@@ -75,9 +75,11 @@ public class SecurityController {
                 theActualUser.getPassword().equals(theEncryptionService.convertSHA256(theNewUser.getPassword()))) {
             String code2FA = this.theNotificationService.generateCode2FA();
             this.theNotificationService.send2FACode(theActualUser.getEmail(), code2FA);
-            // Guarda el código temporalmente (puedes usar una tabla temporal o cache)
-            Session session = new Session(null, null, code2FA);
+
+            Date codeExpiration = new Date(System.currentTimeMillis() + 10 * 60 * 1000); // 10 minutos
+            Session session = new Session(null, codeExpiration, code2FA);
             session.setUser(theActualUser);
+            session.setIntentos(0);
             Session savedSession = this.theSessionRepository.save(session);
 
             theResponse.put("2fa_required", true);
@@ -85,7 +87,7 @@ public class SecurityController {
             theResponse.put("sessionId", savedSession.get_id());
             return theResponse;
         } else {
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Credenciales inválidas");
             return theResponse;
         }
     }
@@ -99,12 +101,23 @@ public class SecurityController {
         String code = body.get("code");
         Session session = this.theSessionRepository.findById(sessionId).orElse(null);
 
+        if (session.getExpiration() != null && session.getExpiration().before(new Date()) ||
+            session.getIntentos() >= 3) {
+            if (session != null) {
+                this.theSessionRepository.delete(session);
+            }
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Sesión expirada o intentos excedidos");
+            return theResponse;
+        }
+
         if (session != null && session.getCode2FA().equals(code)) {
             User theActualUser = session.getUser();
             String token = theJwtService.generateToken(theActualUser);
-            Date expiration = new Date(System.currentTimeMillis() + 30 * 60 * 1000); // 5 minutos
+
             session.setToken(token);
-            session.setExpiration(expiration);
+            session.setCode2FA(null);
+            session.setExpiration(null);
+            session.setIntentos(0);
             this.theSessionRepository.save(session);
 
             this.theNotificationService.sendLoginNotification(
@@ -117,10 +130,11 @@ public class SecurityController {
             theResponse.put("token", token);
             return theResponse;
         } else {
-            if (session != null) {
-                this.theSessionRepository.delete(session);
-            }
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            session.setIntentos(session.getIntentos() + 1);
+            this.theSessionRepository.save(session);
+            int restantes = Math.max(0, 3 - session.getIntentos());
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
+                    "Código incorrecto. Intentos restantes: " + restantes);
             return theResponse;
         }
     }
