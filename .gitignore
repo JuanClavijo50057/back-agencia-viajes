@@ -33,3 +33,16 @@ build/
 .vscode/
 
 confidential/
+
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/ 
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+application.properties
