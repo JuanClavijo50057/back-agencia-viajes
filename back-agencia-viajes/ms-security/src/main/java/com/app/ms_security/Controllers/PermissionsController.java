@@ -1,6 +1,7 @@
 package com.app.ms_security.Controllers;
 
 import com.app.ms_security.Models.Permission;
+import com.app.ms_security.Models.Permission;
 import com.app.ms_security.Repositories.PermissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,20 @@ public class PermissionsController {
                 .orElse(null);
         if (thePermission != null) {
             this.thePermissionRepository.delete(thePermission);
+        }
+    }
+    
+    @PutMapping("{id}")
+    public Permission create(@PathVariable String id, @RequestBody Permission theNewPermission){
+        Permission actualPermission = this.thePermissionRepository.findById(id).orElse(null);
+        if (actualPermission != null){
+            actualPermission.setUrl(theNewPermission.getUrl());
+            actualPermission.setMethod(theNewPermission.getMethod());
+            actualPermission.setModel(theNewPermission.getModel());
+            this.thePermissionRepository.save(actualPermission);
+            return actualPermission;
+        } else {
+            return null;
         }
     }
 }
