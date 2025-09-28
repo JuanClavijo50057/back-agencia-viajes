@@ -77,4 +77,13 @@ public class UserRoleController {
     public List<UserRole> getUsersByRole(@PathVariable String roleId) {
         return this.theUserRoleRepository.getUsersByRole(roleId);
     }
+    @GetMapping("rolesToAdd/{userId}")
+    public List<Role> getRolesToAddUser(@PathVariable String userId) {
+        List<UserRole> userRoles = theUserRoleRepository.getRolesByUser(userId);
+        List<String> assignedRoleIds = userRoles.stream()
+                .map(ur -> ur.getRole().get_id())
+                .toList();
+        return theRoleRepository.findByIdNotIn(assignedRoleIds);
+    }
+
 }
