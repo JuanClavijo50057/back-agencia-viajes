@@ -1,12 +1,17 @@
 package com.app.ms_security.Controllers;
 
+import com.app.ms_security.Configurations.FirebaseConfig;
 import com.app.ms_security.Models.Permission;
+import com.app.ms_security.Models.Profile;
 import com.app.ms_security.Models.Session;
 import com.app.ms_security.Models.User;
+import com.app.ms_security.Repositories.ProfileRepository;
 import com.app.ms_security.Repositories.SessionRepository;
 import com.app.ms_security.Repositories.UserRepository;
 import com.app.ms_security.Services.EncryptionService;
 import com.app.ms_security.Services.JwtService;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseToken;
 import com.app.ms_security.Services.NotificationService;
 import com.app.ms_security.Services.ValidatorsService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -35,6 +40,10 @@ public class SecurityController {
     private NotificationService theNotificationService;
     @Autowired
     private SessionRepository theSessionRepository;
+    @Autowired
+    private ProfileRepository theProfileRepository;
+    @Autowired
+    private FirebaseAuth firebaseAuth;
 
     private ValidatorsService theValidatorsService;
 
@@ -65,6 +74,43 @@ public class SecurityController {
         }
     }
     */
+    @PostMapping("oauth-login")
+    public HashMap<String,Object> loginOauth(@RequestBody  Map<String, String> body, final HttpServletResponse response) throws IOException {
+        HashMap<String,Object> theResponse=new HashMap<>();
+        String idToken=body.get("idToken");
+        if(idToken==null) theResponse.put("status",HttpServletResponse.SC_BAD_REQUEST);
+        try {
+            FirebaseToken decoded = firebaseAuth.verifyIdToken(idToken, true);
+            String email = decoded.getEmail();
+            String name = decoded.getName();
+            String photo=decoded.getPicture();
+
+            if (email == null || email.isBlank())theResponse.put("status",HttpServletResponse.SC_BAD_REQUEST);
+            User theActualUser = this.theUserRepository.getUserByEmail(email);
+            if (theActualUser == null) {
+                theActualUser =new User();
+                theActualUser.setEmail(email);
+                theActualUser.setName(name);
+                theActualUser=theUserRepository.save(theActualUser);
+                Profile thePermission=new Profile(null,theActualUser,null);
+                theProfileRepository.save(thePermission);
+            }
+            String token = theJwtService.generateToken(theActualUser);
+            theResponse.put("token", token);
+            this.theNotificationService.sendLoginNotification(
+                    theActualUser.getEmail(),
+                    theActualUser.getName(),
+                    LocalDateTime.now().toString()
+            );
+
+            theResponse.put("status",HttpServletResponse.SC_OK);
+        } catch (Exception e) {
+            theResponse.put("status",HttpServletResponse.SC_UNAUTHORIZED);
+            theResponse.put("message",e.getMessage());
+        }
+
+        return theResponse;
+    }
 
     @PostMapping("login")
     public HashMap<String,Object> login(@RequestBody User theNewUser,
@@ -83,6 +129,7 @@ public class SecurityController {
             theResponse.put("2fa_required", true);
             theResponse.put("message", "Código 2FA enviado al correo");
             theResponse.put("sessionId", savedSession.get_id());
+
             return theResponse;
         } else {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
