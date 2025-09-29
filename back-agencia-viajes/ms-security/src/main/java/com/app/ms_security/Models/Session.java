@@ -16,6 +16,7 @@ public class Session {
     private String token;
     private Date expiration;
     private String code2FA;
+    private int intentos=0;
 
     @DBRef
     private User user;
@@ -65,4 +66,8 @@ public class Session {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public int getIntentos() {return intentos;}
+
+    public void setIntentos(int intentos) {this.intentos = intentos;}
 }
